@@ -26,6 +26,12 @@ class MainActivity : AppCompatActivity() {
         val loginBtn : Button = findViewById(R.id.loginBtn)
         val uploadBtn : Button = findViewById(R.id.btnUpload)
         val showBtn : Button = findViewById(R.id.showBtn)
+        val basicBtn : Button = findViewById(R.id.btnBasic)
+
+        basicBtn.setOnClickListener(){
+            val intent = Intent(this, BasicActivity :: class.java)
+            startActivity(intent)
+        }
 
         showBtn.setOnClickListener(){
             reference.collection("Oglasi").get().addOnSuccessListener { querySnapshot ->
@@ -36,7 +42,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         uploadBtn.setOnClickListener(){
-            val oglas = Oglas(1,"okdsae", Calendar.getInstance().time,"kikoski","kur","dsalkdsahfskkfsdasdsadasfsa")
+            val oglas = Oglas(1,"okdsae", Calendar.getInstance().time,"kikoski","kur",
+                "dsalkdsahfskkfsdasdsadasfsa","Ohrid","900", "072126734","darko_filip4e@hotmail.com")
             val database = FirebaseFirestore.getInstance()
             database.collection("Oglasi").add(oglas)
            // val myRef = database.getReference("message")
