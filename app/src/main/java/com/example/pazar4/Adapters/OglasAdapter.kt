@@ -1,5 +1,6 @@
 package com.example.pazar4.Adapters
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,11 +9,14 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.example.pazar4.BasicActivity
 import com.example.pazar4.Models.Oglas
 import com.example.pazar4.R
+import com.example.pazar4.ViewModels.ShopViewModel
 import com.squareup.picasso.Picasso
 
 class OglasAdapter(val Oglasi : MutableList<Oglas>) : RecyclerView.Adapter<OglasAdapter.ViewHolder>(){
+
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) : OglasAdapter.ViewHolder {
@@ -29,6 +33,8 @@ class OglasAdapter(val Oglasi : MutableList<Oglas>) : RecyclerView.Adapter<Oglas
 
         Picasso.get().load(Oglasi[position].thumbnail).into(holder.itemThumbnail)
 
+        holder.oglasId = Oglasi[position].Id
+
     }
 
     override fun getItemCount(): Int {
@@ -38,6 +44,8 @@ class OglasAdapter(val Oglasi : MutableList<Oglas>) : RecyclerView.Adapter<Oglas
     }
 
     class ViewHolder(view : View) : RecyclerView.ViewHolder(view){
+
+        var oglasId : Long = 0
 
         var itemTitle : TextView
 
@@ -51,7 +59,11 @@ class OglasAdapter(val Oglasi : MutableList<Oglas>) : RecyclerView.Adapter<Oglas
 
             itemThumbnail.setOnClickListener{
 
-               // view.findNavController().navigate(R.id.SecondFragment)
+               //BasicActivity.displayText(view.context)
+
+
+
+                view.findNavController().navigate(R.id.SecondFragment)
 
                 /*val bundle = Bundle()
 
