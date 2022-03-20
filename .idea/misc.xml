@@ -3,9 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Daree/AndroidStudioProjects/Pazar4/app/src/main/res/layout/activity_basic.xml" value="0.25" />
         <entry key="..\:/Users/Daree/AndroidStudioProjects/Pazar4/app/src/main/res/layout/activity_details.xml" value="0.25" />
         <entry key="..\:/Users/Daree/AndroidStudioProjects/Pazar4/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/Daree/AndroidStudioProjects/Pazar4/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/Daree/AndroidStudioProjects/Pazar4/app/src/main/res/layout/cardview.xml" value="0.25" />
+        <entry key="..\:/Users/Daree/AndroidStudioProjects/Pazar4/app/src/main/res/layout/content_basic.xml" value="0.25" />
+        <entry key="..\:/Users/Daree/AndroidStudioProjects/Pazar4/app/src/main/res/layout/fragment_first.xml" value="0.25" />
       </map>
     </option>
   </component>
