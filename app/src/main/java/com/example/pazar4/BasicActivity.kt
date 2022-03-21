@@ -51,9 +51,18 @@ class BasicActivity : AppCompatActivity() {
                 || super.onSupportNavigateUp()
     }
 
-    fun FetchAllOglasi() : List<Oglas>{
+    fun FetchAllOglasi() : List<Oglas>?{
 
         return shopViewModel.getOglasi()
+    }
+
+    fun FetchOglasById(id: Long): Oglas? {
+
+        Toast.makeText(this, "Fetching oglas with Id + " + id.toString(), Toast.LENGTH_LONG).show()
+
+        return shopViewModel.findOglasById(id)
+
+
     }
 
 }

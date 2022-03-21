@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.os.bundleOf
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pazar4.BasicActivity
@@ -15,8 +16,7 @@ import com.example.pazar4.R
 import com.example.pazar4.ViewModels.ShopViewModel
 import com.squareup.picasso.Picasso
 
-class OglasAdapter(val Oglasi : MutableList<Oglas>) : RecyclerView.Adapter<OglasAdapter.ViewHolder>(){
-
+class OglasAdapter(val Oglasi : MutableList<Oglas>, val context: Context?) : RecyclerView.Adapter<OglasAdapter.ViewHolder>(){
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) : OglasAdapter.ViewHolder {
@@ -35,6 +35,8 @@ class OglasAdapter(val Oglasi : MutableList<Oglas>) : RecyclerView.Adapter<Oglas
 
         holder.oglasId = Oglasi[position].Id
 
+
+
     }
 
     override fun getItemCount(): Int {
@@ -51,7 +53,9 @@ class OglasAdapter(val Oglasi : MutableList<Oglas>) : RecyclerView.Adapter<Oglas
 
         var itemThumbnail : ImageView
 
+
         init {
+
 
             itemTitle = view.findViewById(R.id.txtOglasTitle)
 
@@ -61,16 +65,19 @@ class OglasAdapter(val Oglasi : MutableList<Oglas>) : RecyclerView.Adapter<Oglas
 
                //BasicActivity.displayText(view.context)
 
+                /*(view.context as BasicActivity).FetchOglasById(oglasId)*/
 
+                val bundle = bundleOf("oglasId" to oglasId)
 
-                view.findNavController().navigate(R.id.SecondFragment)
-
-                /*val bundle = Bundle()
+               view.findNavController().navigate(R.id.SecondFragment, bundle)
+/*
+                //(context as BasicActivity).FetchOglasById(oglasId)
+                val bundle = Bundle()
 
                 bundle.putString("Title", itemTitle.text.toString())
 
-                bundle.putString("Thumbnail", )
-*/
+                bundle.putString("Thumbnail", )*/
+
             }
 
         }

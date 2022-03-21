@@ -40,7 +40,7 @@ class FirstFragment : Fragment() {
 
         val Oglasi = (activity as BasicActivity).FetchAllOglasi()
 
-        adapter = OglasAdapter(Oglasi as MutableList<Oglas>)
+        adapter = OglasAdapter(Oglasi as MutableList<Oglas>, this.activity)
         /*binding.buttonFirst.setOnClickListener {
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
         }*/

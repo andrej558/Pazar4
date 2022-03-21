@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.example.pazar4.databinding.FragmentSecondBinding
 
@@ -31,6 +33,16 @@ class SecondFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val id: Long = arguments?.get("oglasId") as Long
+
+        Toast.makeText(this.activity, "Oglas with Id" + id.toString(), Toast.LENGTH_LONG).show()
+
+        val oglas = (context as BasicActivity).FetchOglasById(id)
+
+        if (oglas != null) {
+            view.findViewById<TextView>(R.id.txtTitle).setText(oglas.Name)
+        }
 
         binding.buttonSecond.setOnClickListener {
             findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
