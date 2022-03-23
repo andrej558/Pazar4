@@ -41,7 +41,7 @@ class SecondFragment : Fragment() {
         val oglas = (context as BasicActivity).FetchOglasById(id)
 
         if (oglas != null) {
-            view.findViewById<TextView>(R.id.txtTitle).setText(oglas.Name)
+            view.findViewById<TextView>(R.id.txtSecondTitle).setText(oglas.Name)
         }
 
         binding.buttonSecond.setOnClickListener {
